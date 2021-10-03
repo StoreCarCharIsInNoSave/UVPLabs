@@ -1,0 +1,33 @@
+﻿program Project1;
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+const eps=0.001;
+ k =10;
+var
+ a,b,h,x,s,q,u,f :Real;
+ n :Integer;
+begin
+ Write ('Введите отрезок [a,b]->'); ReadLn (a,b);
+ h:=(b-a)/k; x:=a;
+ WriteLn(' Таблица значений функции ');
+ WriteLn('┌────┬────────┬────────┬───────┬────┐');
+ WriteLn('│ x  │      S │   f    │    Q  │  n │');
+ WriteLn('├────┼────────┼────────┼───────┼────┤');
+while (x<=b) do
+begin
+ s:=0; n:=1; u:=x*x*x; q:=u/3;
+ while (abs(q)>eps) do
+ begin
+ s:=s+q; n:=n+1;
+ u:=u*(-x*x);
+ q:=u/(4*n*n-1); // Знамен
+ end;
+ f:=(x*x+1)/2*arctan(x)-x/2;
+ WriteLn('│',x:4:2,'│',s:8:4,'│',f:8:4,'│',
+ q:7:4,'│',n:3,' │');
+ x:=x+h;
+end;
+ WriteLn ('└────┴────────┴────────┴───────┴────┘');
+ readln;
+End.
