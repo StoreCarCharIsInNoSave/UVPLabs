@@ -1,7 +1,7 @@
 ﻿program Project1;
 {$APPTYPE CONSOLE}
 {$R *.res}
- uses math;
+
 const
   eps = 0.001;
   k = 10;
@@ -37,12 +37,12 @@ begin
     s := 0;
     n := 1;
     u := 1;
-    q := u;
+    q := 1;
     while (abs(q) > eps) do
     begin
       s := s + q;
       n := n + 1;
-      u := u*(power(-1,n)*power(x,2*n))/ Factorial(2*n+1);
+      u := u * (-x * x);
       q := u / Factorial(2*n+1)
     end;
     f := sin(x)/x;
