@@ -1,7 +1,9 @@
 ﻿program Project1;
 {$APPTYPE CONSOLE}
 {$R *.res}
- uses math;
+ uses
+  math;
+
 const
   eps = 0.001;
   k = 10;
@@ -32,7 +34,8 @@ begin
   WriteLn('┌────┬────────┬────────┬───────┬────┐');
   WriteLn('│ x  │      S │   f    │    Q  │  n │');
   WriteLn('├────┼────────┼────────┼───────┼────┤');
-  repeat
+  while (x<=b) do begin
+
     s := 0;
     n := 1;
     u := 1;
@@ -47,7 +50,7 @@ begin
     f := sin(x)/x;
     WriteLn('│', x:4:2, '│', s:8:4, '│', f:8:4, '│', q:7:4, '│', n:3, ' │');
     x := x + h;
-  until (x > b);
+  end;
   WriteLn('└────┴────────┴────────┴───────┴────┘');
   ReadLn;
 

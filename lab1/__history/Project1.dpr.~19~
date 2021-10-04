@@ -32,7 +32,8 @@ begin
   WriteLn('┌────┬────────┬────────┬───────┬────┐');
   WriteLn('│ x  │      S │   f    │    Q  │  n │');
   WriteLn('├────┼────────┼────────┼───────┼────┤');
-  repeat
+  while (x <= b) do
+  begin
     s := 0;
     n := 1;
     u := 1;
@@ -41,13 +42,13 @@ begin
     begin
       s := s + q;
       n := n + 1;
-      u := u*(power(-1,n)*power(x,2*n));
+      u := u*(power(-1,n)*power(x,2*n))/ Factorial(2*n+1);
       q := u / Factorial(2*n+1)
     end;
     f := sin(x)/x;
     WriteLn('│', x:4:2, '│', s:8:4, '│', f:8:4, '│', q:7:4, '│', n:3, ' │');
     x := x + h;
-  until (x > b);
+  end;
   WriteLn('└────┴────────┴────────┴───────┴────┘');
   ReadLn;
 
