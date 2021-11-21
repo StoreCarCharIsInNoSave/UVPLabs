@@ -6,32 +6,21 @@
 положительных элементов столбцов методом линейного выбора с обменом. 
 }
 const
-  n = 4;
+  n = 3;
 
 type
   matrix = array of array of integer;
 
 
-function GetDoubledAverage(z: matrix): double;
-var
-  i, j, sum, counter: integer;
-begin
-  for j := 0 to n - 1 do
-    for i := 0 to n - 1 do
-      if j < i then begin
-        sum := sum + z[i, j];
-        counter := counter + 1;
-      end;
-  result := 2 * (sum / counter);
-end;
 
 
 
-function GetSumOfPositiveNumberInColumn(a: array of integer): integer;
+
+function GetSumOfNegativeNumberInColumn(a: array of integer): integer;
 var
   sum, i: integer;
 begin
-  for i := 0 to n - 1 do if a[i] > 0 then sum := sum + a[i];
+  for i := 0 to n - 1 do if a[i] < 0 then sum := sum + a[i];
   result := sum;   
 end;
 
@@ -53,7 +42,7 @@ var
   mat: matrix;
 
 var
-  i, j: integer;
+  i, j, max: integer;
 
 begin
   setlength(mat, n);
@@ -73,40 +62,43 @@ begin
     writeln;
   end;
   
- 
-  
-  if GetMaxInMatrix(mat) >= GetDoubledAverage(mat) then begin
-     var min,r:array of integer;
-  var i_min:integer;
-
-  
-  for i := 0 to n - 2 do
-  begin
-    min := mat[i];
-    i_min := i;
-    for j := i + 1 to n-1 do
-      if GetSumOfPositiveNumberInColumn(mat[j]) > GetSumOfPositiveNumberInColumn(min) then
-      begin
-        min := mat[j];
-        i_min := j;
-      end;
-    r := mat[i_min];
-    mat[i_min] := mat[i];
-    mat[i] := r;
-  end;
   
   
+  max := getMaxInMatrix(mat);
   
-  writeln('Полученная матрица:');
-  for j := 0 to n - 1 do
-  begin
-    for i := 0 to n - 1 do
+  if ((max > 4) and (max < 15)) then begin
+    var min, r: array of integer;
+    var i_min: integer;
+    
+    
+    for i := 0 to n - 2 do
     begin
-      write(mat[i][j]:4)
+      min := mat[i];
+      i_min := i;
+      for j := i + 1 to n - 1 do
+        if GetSumOfNegativeNumberInColumn(mat[j]) < GetSumOfNegativeNumberInColumn(min) then
+        begin
+          min := mat[j];
+          i_min := j;
+        end;
+      r := mat[i_min];
+      mat[i_min] := mat[i];
+      mat[i] := r;
     end;
-    writeln;
-  end;
+    
+    
+    
+    
+    writeln('Полученная матрица:');
+    for j := 0 to n - 1 do
+    begin
+      for i := 0 to n - 1 do
+      begin
+        write(mat[i][j]:4)
+      end;
+      writeln;
+    end;
   end else writeln('Максимальный элемент матрицы больше или равен среднему удвоенному среднему арифметическому чисел расположенных выше главной диагонали');
   
-
+  
 end.

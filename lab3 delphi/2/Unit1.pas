@@ -78,6 +78,7 @@ type
   matrix = array of array of Integer;
 
 var
+
   mat: matrix;
 
 function GetDoubledAverage(z: matrix): double;
@@ -126,6 +127,7 @@ begin
 
   for j := 0 to n - 1 do
     for i := 0 to n - 1 do
+
       if max < z[i][j] then
         max := z[i][j];
 
@@ -168,7 +170,9 @@ end;
 
 procedure TForm1.FormMouseDown(Sender: TObject; Button: TMouseButton;
 
-  Shift: TShiftState; X, Y: Integer);
+  Shift: TShiftState;
+
+  X, Y: Integer);
 
 begin
   var
@@ -210,6 +214,7 @@ end;
 procedure cpy(var a1, a2: array of Integer; const n: Integer);
 
 var
+
   i: Integer;
 
 begin
@@ -232,6 +237,8 @@ var
 
 begin
 
+
+  if GetMaxInMatrix(mat) >= GetDoubledAverage(mat) then begin
   setlength(min, n);
 
   setlength(r, n);
@@ -260,7 +267,7 @@ begin
     cpy(mat[i], r, n);
 
   end;
-
+  end else showmessage('ggfgf');
 end;
 
 procedure TForm1.N2Click(Sender: TObject);
@@ -282,6 +289,7 @@ begin
   for var j := 0 to n - 1 do
   begin
     for var i := 0 to n - 1 do
+
     begin
       StringGrid2.Cells[i, j] := mat[i, j].ToString();
 

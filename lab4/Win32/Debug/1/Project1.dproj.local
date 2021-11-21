@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.673,=C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab4\Win32\Debug\Project1.dll</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.718,C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab4\Win32\Debug\Project1.dll=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.999,=C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab4\Win32\Debug\Project1.dll</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.737,C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab3 delphi\1\Unit1.pas=C:\Users\LetsAllLoveLain\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.278,=C:\Users\LetsAllLoveLain\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.737,C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab3 delphi\1\Unit1.dfm=C:\Users\LetsAllLoveLain\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.734,C:\Users\LetsAllLoveLain\OneDrive\Рабочий стол\UVPLabs\lab3 delphi\1\Project1.dproj=C:\Users\LetsAllLoveLain\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
